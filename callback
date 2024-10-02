@@ -1,0 +1,16 @@
+A callback is a function that is passed as an argument to 
+another function and is invoked (or "called back") at a later 
+time when certain operations or events have been completed.
+
+**Callbacks are used to ensure that certain code is executed only after a specific operation has been performed
+
+....callback are specially used for asyncronpous function
+
+<!-- JavaScript is asynchronous by nature, -->
+
+************************
+<!-- call stack being full -->
+
+1.Recursive Function Without a Base Case: A recursive function is one that calls itself. If the recursion doesn't have a base case (a condition to stop), it will keep calling itself 
+
+2.Deeply Nested Function Calls: Even if the functions are not recursive, if you have too many deeply nested function calls, the call stack can overflow
