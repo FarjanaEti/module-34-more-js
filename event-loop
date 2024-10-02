@@ -1,0 +1,23 @@
+<!-- 1. Call Stack: -->
+ JavaScript is single-threaded, meaning it can only execute one task at a time. 
+The call stack is a data structure that keeps track of function executions. When a function is called, it's pushed onto the call stack, and when the function returns or finishes, it gets popped off the stack.
+
+<!-- 2. Callback/Message Queue (Task Queue): -->
+1. The callback queue (also called the task queue or message queue) holds the messages (or callbacks) that are ready to be executed.
+2. When an asynchronous operation (like a setTimeout, fetch, or event listener) completes, the corresponding callback is added to this queue.
+3. These tasks will remain in the queue until the call stack is empty, which is when the event loop will push them to the stack for execution.
+
+<!-- 3. Event Loop: -->
+The event loop is responsible for continuously checking the call stack and the callback queue.
+How it works: The event loop checks if the call stack is empty. If the stack is empty and there are pending tasks in the callback queue, it will push the first task from the queue onto the call stack for execution.
+
+<!-- Flow of Execution: -->
+1. Synchronous code is executed first and added to the call stack.
+2. If an asynchronous function (e.g., setTimeout, fetch, or event listener) is encountered, it is offloaded to the Web APIs (handled by the browser or Node.js).
+3. Once the asynchronous operation completes, the callback is pushed to the callback queue.
+4. The event loop constantly monitors the call stack. When the stack is empty, it pulls the next task from the callback queue and pushes it onto the stack for execution.
+
+<!-- Key Points to Remember: -->
+1.  The event loop ensures non-blocking behavior, allowing JavaScript to run asynchronous code efficiently.
+2.  Synchronous code (e.g., console.log()) always gets executed first because it directly enters the call stack.
+3. Asynchronous operations like timers (setTimeout), HTTP requests (fetch), and event listeners are processed by the Web APIs, and their callbacks are placed into the callback queue when ready.

@@ -4,5 +4,5 @@ const clockeId=setInterval(()=>{
      if(num>5){
         clearInterval(clockeId)                      
      } 
-     console.log(clockeId,num)                        
+     console.log(num)                        
 },2000)
